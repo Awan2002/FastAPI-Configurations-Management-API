@@ -43,6 +43,22 @@ This project is a FastAPI-based API for managing configurations associated with 
     DATABASE_URL = os.getenv('DATABASE_URL')
 - Configuration database.py
 
+### Schema design
+
+1. **Country:**
+   ```sh
+   id: Primary Key, Integer
+   country_code: String, Unique (e.g., 'IN', 'US')
+   country_name: String (e.g., 'India', 'United States')
+
+2. **Configuration:**
+   ```sh
+   id: Primary Key, Integer
+   field_name: String (e.g., 'Business Name', 'PAN', 'GSTIN')
+   field_type: String (e.g., 'string', 'number', 'date')
+   is_required: Boolean
+   country_id: Foreign Key, references Country.id
+
 
 ## Running the Application
 
@@ -66,7 +82,7 @@ This project is a FastAPI-based API for managing configurations associated with 
     http://localhost:5000/create_configuration/
     {
         "country_id" : 2,
-        "field_name": "FieldName2",
+        "field_name": "field_name",
         "field_type": "String2",
         "is_required": true
     }
