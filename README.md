@@ -20,7 +20,7 @@ This project is a FastAPI-based API for managing configurations associated with 
 
 1. **Clone the repository:**
    ```sh
-   git clone [<repository-url>](https://github.com/Awan2002/FastAPI-Configurations-Management-API.git)
+   git clone https://github.com/Awan2002/FastAPI-Configurations-Management-API.git
 2. **Create a virtual environment:**
     ```sh
     python -m venv venv
