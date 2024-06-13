@@ -32,7 +32,7 @@ def get_configuration(country_code: str, db: Session = Depends(get_db)):
     return configurations
 
 # Updates the configuration identified by configuration_id using data provided in the request body and returns the updated configuration.
-@app.put("/update_configuration/{configuration_id}", response_model=schemas.Configuration)
+@app.post("/update_configuration/{configuration_id}", response_model=schemas.Configuration)
 def update_configuration(configuration_id: int, configuration: schemas.ConfigurationUpdate, db: Session = Depends(get_db)):
     db_configuration = crud.update_configuration(db, configuration_id=configuration_id, configuration=configuration)
     if db_configuration is None:
