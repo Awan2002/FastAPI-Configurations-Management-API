@@ -20,14 +20,15 @@ This project is a FastAPI-based API for managing configurations associated with 
 
 1. **Clone the repository:**
    ```sh
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone [<repository-url>](https://github.com/Awan2002/FastAPI-Configurations-Management-API.git)
 2. **Create a virtual environment:**
     ```sh
     python -m venv venv
 3. **Install dependencies:**
     ```sh
     pip install -r requirements.txt
+    or
+    python3 -m pip install -r requirements.txt
 ## Configuration:
 
 - Ensure PostgreSQL is running.
@@ -48,6 +49,8 @@ This project is a FastAPI-based API for managing configurations associated with 
 - You can the application by typing 
     ```sh
     uvicorn main:app --reload --port 5000
+    or
+    python3 -m uvicorn main:app --reload --port 5000
 - This will start the server at localhost:5000
 
 ## Testing with Postman
