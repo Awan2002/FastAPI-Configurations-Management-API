@@ -54,8 +54,8 @@ This project is a FastAPI-based API for managing configurations associated with 
 2. **Configuration:**
    ```sh
    id: Primary Key, Integer
-   field_name: String (e.g., 'Business Name', 'PAN', 'GSTIN')
-   field_type: String (e.g., 'string', 'number', 'date')
+   identity: String (e.g., 'Business Name', 'PAN', 'GSTIN')
+   identity_type: String (e.g., 'string', 'number', 'date')
    is_required: Boolean
    country_id: Foreign Key, references Country.id
 
@@ -73,7 +73,7 @@ This project is a FastAPI-based API for managing configurations associated with 
 
 - There are two Models present in here where configuration depends on country model. And In this project i have not added api for adding data to country Collection. So you have to do it Manually or using pgadmin4 by wrting queries as:
     ```sh
-    INSERT INTO countries (name, code) VALUES ('CountryName', 'CountryCode');
+    INSERT INTO countries (country_name, country_code) VALUES ('CountryName', 'CountryCode');
 - Replace CountryName and CountryCode with different values to create dummy data.
 - After this You will have some dummy data in Country Collection.
 - After this You can test api in Postman
@@ -82,8 +82,8 @@ This project is a FastAPI-based API for managing configurations associated with 
     http://localhost:5000/create_configuration/
     {
         "country_id" : 2,
-        "field_name": "field_name",
-        "field_type": "String2",
+        "identity": "identity",
+        "identity_type": "identity_type",
         "is_required": true
     }
 - Through this you can test all the APIs on Postman

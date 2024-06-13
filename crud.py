@@ -3,12 +3,12 @@ import models, schemas
 
 
 # The create_configuration function creates a new Configuration record in the database using attributes from configuration, 
-# including country_id, field_name, field_type, and is_required, then returns the newly created Configuration object after committing it to the database session.
+# including country_id, identity, identity_type, and is_required, then returns the newly created Configuration object after committing it to the database session.
 def create_configuration(db: Session, configuration: schemas.ConfigurationCreate):
     db_configuration = models.Configuration(
         country_id=configuration.country_id,
-        field_name=configuration.field_name,
-        field_type=configuration.field_type,
+        identity=configuration.identity,
+        identity_type=configuration.identity_type,
         is_required=configuration.is_required
     )
     db.add(db_configuration)
